@@ -7,3 +7,5 @@ Project will expand to include
 * __init__.py namespace packages - Added 14th May
 * Docker, ability to run in a container
 * routing
+* testing - Added 14th May
+* docker & requirements scripting
