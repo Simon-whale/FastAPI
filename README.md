@@ -6,4 +6,4 @@ Project will expand to include
 * Sentry
 * __init__.py namespace packages
 * Docker, ability to run in a container
-* ?? will add more
+* routing
