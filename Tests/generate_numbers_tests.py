@@ -1,3 +1,4 @@
+# To run these test right click on the code and choose run (assume using Pycharm)
 import unittest
 
 from Services.GenerateData import DataGenerator

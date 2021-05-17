@@ -3,7 +3,7 @@ class DataGenerator:
         pass
 
     @staticmethod
-    def create(start: int = 0, end: int = 100) -> list[int]:
+    def create(start: int = 0, end: int = 100): # -> list[int]:
         values = []
 
         if start == 0 and end == 0:
