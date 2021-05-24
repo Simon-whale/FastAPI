@@ -21,7 +21,7 @@ tags_metadata = [
 app = FastAPI(
     title="Fast Api Learning",
     openapi_tags=tags_metadata,
-    docs_url=None,
+    docs_url="/swagger",
     redoc_url="/docs"
 )
 
