@@ -4,6 +4,7 @@ from fastapi.routing import  APIRoute
 from . import health
 from . import root
 from . import Results
+from . import ErrorHandling
 
 route_v3 = APIRouter()
 
@@ -13,3 +14,4 @@ route_v3 = APIRouter()
 route_v3.include_router(health.router, prefix="/health")
 route_v3.include_router(root.router, prefix="")
 route_v3.include_router(Results.router, prefix="/results")
+route_v3.include_router(ErrorHandling.router, prefix="/errors")
