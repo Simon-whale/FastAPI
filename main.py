@@ -15,6 +15,14 @@ tags_metadata = [
         "description": textwrap.dedent(
             """These endpoints are simply used to return a list of numbers, one endpoint is
                default set to 0 to 100 and hte other is set dynamically set by the caller""")
+    },
+    {
+        "name": "Errors",
+        "description": textwrap.dedent(
+            """This section is to show how parts will return a https status code for something
+               that will on purpose throw an exception
+            """
+        )
     }
 ]
 

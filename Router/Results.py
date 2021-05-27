@@ -1,7 +1,7 @@
 import Services
 import json
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Response
 from CommonHeaders.ResultsCommon import CommonQueryParams
 
 router = APIRouter()
@@ -14,6 +14,11 @@ async def get_results():
     # show the different ways of using the __init__ namespace
     return json.dumps(Services.DataGenerator.create())
 
+
+@router.get('/jsonResults', tags=["Results"])
+async def get_json_results():
+    # This will return the results as an actual json string
+    return Response(content=json.dumps(Services.DataGenerator.create()), media_type="application/json")
 
 @router.get("/results/", tags=["Results"])
 async def results_dynamic(commons: CommonQueryParams = Depends(CommonQueryParams)):
