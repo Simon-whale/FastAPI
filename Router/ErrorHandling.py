@@ -1,17 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-
-
-# TODO: find out if there is a rule of when to encapsulate another class
-#       rather than seperate it out into it's own class
-class Item(BaseModel):
-     id: str
-     value: str
-
-
-class Message(BaseModel):
-     message: str
+from Models.Message import Message
+from Models.Item import Item
 
 
 router = APIRouter()
