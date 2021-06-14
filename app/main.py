@@ -1,6 +1,5 @@
 import textwrap
 
-# import uvicorn
 from app.Router import health, ErrorHandling, Results, root
 
 from fastapi import FastAPI, APIRouter
@@ -44,7 +43,3 @@ route_v3.include_router(Results.router, prefix="/results")
 route_v3.include_router(ErrorHandling.router, prefix="/errors")
 
 app.include_router(route_v3)
-
-# Automatically start the server on port 8000
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="localhost", port=8000)
