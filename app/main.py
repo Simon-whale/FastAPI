@@ -1,9 +1,9 @@
 import textwrap
 
-import uvicorn
-import Router
+# import uvicorn
+from app.Router import health, ErrorHandling, Results, root
 
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 
 tags_metadata = [
     {
@@ -33,8 +33,18 @@ app = FastAPI(
     redoc_url="/docs"
 )
 
-app.include_router(Router.route_v3)
+route_v3 = APIRouter()
+
+# Add each route to this router which we will then add into the
+# main applications router so that we can create a structured layout
+# visually and in code
+route_v3.include_router(health.router, prefix="/health")
+route_v3.include_router(root.router, prefix="")
+route_v3.include_router(Results.router, prefix="/results")
+route_v3.include_router(ErrorHandling.router, prefix="/errors")
+
+app.include_router(route_v3)
 
 # Automatically start the server on port 8000
-if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="localhost", port=8000)

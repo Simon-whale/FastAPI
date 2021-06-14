@@ -1,8 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
-from pydantic import BaseModel
-from Models.Message import Message
-from Models.Item import Item
+from app.Models.Message import Message
+from app.Models.Item import Item
 
 
 router = APIRouter()
